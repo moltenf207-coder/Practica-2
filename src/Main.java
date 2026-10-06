@@ -1,26 +1,24 @@
 import java.util.Scanner;
 
-public class Ejercicio12 {
+public class Main {
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
-        int cantidad;
-        int aprobados = 0;
+        System.out.print("Introduce una cadena: ");
+        String cadena = sc.nextLine();
 
-        System.out.print("Introduce la cantidad de alumnos: ");
-        cantidad = teclado.nextInt();
+        System.out.print("Introduce un carácter: ");
+        char caracter = sc.next().charAt(0);
 
-        for (int i = 1; i <= cantidad; i++) {
-            System.out.print("Introduce la nota del alumno " + i + ": ");
-            double nota = teclado.nextDouble();
+        int contador = 0;
 
-            if (nota >= 6.00) {
-                aprobados++;
+        for (int i = 0; i < cadena.length(); i++) {
+            if (cadena.charAt(i) == caracter) {
+                contador++;
             }
         }
 
-        System.out.println("Cantidad de alumnos aprobados: " + aprobados);
-
-        teclado.close();
+        System.out.println("El caracter '" + caracter +
+                "' se repite " + contador + " veces");
     }
-}git
+}
