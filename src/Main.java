@@ -1,23 +1,26 @@
 import java.util.Scanner;
 
-public class Main {
-
-    public static String obtenerFragmento(String cadena, int inicio, int fin) {
-        return cadena.substring(inicio, fin).toUpperCase();
-    }
-
+public class Ejercicio12 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner teclado = new Scanner(System.in);
 
-        System.out.print("Introduce una cadena: ");
-        String cadena = sc.nextLine();
+        int cantidad;
+        int aprobados = 0;
 
-        System.out.print("Introduce la posición inicial: ");
-        int inicio = sc.nextInt();
+        System.out.print("Introduce la cantidad de alumnos: ");
+        cantidad = teclado.nextInt();
 
-        System.out.print("Introduce la posición final: ");
-        int fin = sc.nextInt();
+        for (int i = 1; i <= cantidad; i++) {
+            System.out.print("Introduce la nota del alumno " + i + ": ");
+            double nota = teclado.nextDouble();
 
-        System.out.println(obtenerFragmento(cadena, inicio, fin));
+            if (nota >= 6.00) {
+                aprobados++;
+            }
+        }
+
+        System.out.println("Cantidad de alumnos aprobados: " + aprobados);
+
+        teclado.close();
     }
-}
+}git
